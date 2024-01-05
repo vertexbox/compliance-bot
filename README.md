@@ -22,6 +22,7 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
 - [probot](https://github.com/probot/probot)
 - [What is the best way to wrap synchronous functions in to a promise](https://stackoverflow.com/questions/36826592/what-is-the-best-way-to-wrap-synchronous-functions-in-to-a-promise)
+- [GitHub Webhook Events and Payloads](https://docs.github.com/en/webhooks/webhook-events-and-payloads)
 
 ## License
 
