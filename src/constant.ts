@@ -14,6 +14,7 @@ export const defaultLables = [
   "fixture",
   "chore",
   "test",
+  "api",
 ];
 
 export const strictLabels = defaultLables.slice(0, -5);
