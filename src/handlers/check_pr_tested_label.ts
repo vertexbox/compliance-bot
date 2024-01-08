@@ -8,7 +8,7 @@ import {
 } from "../common";
 import { constructMetadata } from "../events/metadata";
 
-const check_run_name = `${process.env.APP_NAME}/check_pr_tested_label`;
+const check_run_name = `${process.env.APP_NAME} / check_pr_tested_label`;
 
 export = {
   name: check_run_name,

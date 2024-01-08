@@ -40,7 +40,7 @@ const validateTitle = (input: string): boolean => {
   }
 };
 
-const check_run_name = `${process.env.APP_NAME}/validate_pr_title`;
+const check_run_name = `${process.env.APP_NAME} / validate_pr_title`;
 
 export = {
   name: check_run_name,
