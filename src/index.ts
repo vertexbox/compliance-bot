@@ -12,6 +12,7 @@ export default (app: Probot) => {
       "pull_request.reopened",
       "pull_request.synchronize",
       "pull_request.edited",
+      "pull_request.labeled",
       "check_run.rerequested",
     ],
     async (context: Context<any>) => {

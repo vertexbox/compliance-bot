@@ -8,7 +8,7 @@ export default async (
   event: string,
 ): Promise<Result> => {
   const modules: HandlerModule[] = Handlers.filter((item) =>
-    item.event_triggers.includes(event.split(".")[0]),
+    item.event_triggers.includes(event),
   );
   const extension = {
     octokit: context.octokit,
