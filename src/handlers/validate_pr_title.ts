@@ -47,6 +47,7 @@ export = {
   event_triggers: [
     "pull_request.opened",
     "pull_request.reopened",
+    "pull_request.synchronize",
     "pull_request.edited",
     "check_run.rerequested",
   ],
