@@ -16,6 +16,7 @@ export = {
     "pull_request.opened",
     "pull_request.reopened",
     "pull_request.labeled",
+    "pull_request.unlabeled",
     "check_run.rerequested",
   ],
   description: "check if the 'tested' label is present in the PR",
@@ -64,7 +65,11 @@ Processing
     app.log.info(`check_run ${_check_run_id} created`);
 
     // 1.2 Check if the tested label is present in the PR
-    if (metadata.pull_request.labels.includes("tested")) {
+    if (
+      metadata.pull_request.labels
+        .map((label: any) => label.name)
+        .includes("tested")
+    ) {
       // valid format
       app.log.info(`Check passed, label 'tested' is present, proceed`);
 
