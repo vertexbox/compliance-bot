@@ -44,13 +44,6 @@ const check_run_name = `${process.env.APP_NAME} / validate_pr_title`;
 
 export = {
   name: check_run_name,
-  event_triggers: [
-    "pull_request.opened",
-    "pull_request.reopened",
-    "pull_request.synchronize",
-    "pull_request.edited",
-    "check_run.rerequested",
-  ],
   description: "check if pr title is in valid format",
   handler: handler as Handler,
 } as HandlerModule;

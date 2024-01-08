@@ -14,7 +14,6 @@ interface Handler {
 
 interface HandlerModule {
   name: string;
-  event_triggers: string[];
   description: string;
   handler: Handler;
 }
