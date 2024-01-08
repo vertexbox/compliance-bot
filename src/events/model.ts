@@ -9,6 +9,7 @@ export type Metadata = {
     title: string;
     author: string;
     number: number;
+    labels: string[];
     updated_at: string;
     html_url: string;
   };
