@@ -44,7 +44,12 @@ const check_run_name = `${process.env.APP_NAME}/validate_pr_title`;
 
 export = {
   name: check_run_name,
-  event_triggers: ["pull_request", "check_run"],
+  event_triggers: [
+    "pull_request.opened",
+    "pull_request.reopened",
+    "pull_request.edited",
+    "check_run.rerequested",
+  ],
   description: "check if pr title is in valid format",
   handler: handler as Handler,
 } as HandlerModule;
@@ -108,7 +113,7 @@ Passed
     } else {
       // invalid format
       app.log.info(
-        `Check passed, the PR title "${metadata.pull_request.title}" is not valid, rejected`,
+        `Check failed, the PR title "${metadata.pull_request.title}" is not valid, rejected`,
       );
 
       // Update status
