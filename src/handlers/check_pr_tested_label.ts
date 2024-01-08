@@ -12,14 +12,6 @@ const check_run_name = `${process.env.APP_NAME} / check_pr_tested_label`;
 
 export = {
   name: check_run_name,
-  event_triggers: [
-    "pull_request.opened",
-    "pull_request.reopened",
-    "pull_request.synchronize",
-    "pull_request.labeled",
-    "pull_request.unlabeled",
-    "check_run.rerequested",
-  ],
   description: "check if the 'tested' label is present in the PR",
   handler: handler as Handler,
 } as HandlerModule;

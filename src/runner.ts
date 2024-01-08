@@ -1,5 +1,5 @@
 import { Repository, Result, HandlerModule } from "./common";
-import { Handlers } from "./config";
+import { HandlerModules } from "./config";
 import { Context, Probot } from "probot";
 
 export default async (
@@ -7,9 +7,7 @@ export default async (
   app: Probot,
   event: string,
 ): Promise<Result> => {
-  const modules: HandlerModule[] = Handlers.filter((item) =>
-    item.event_triggers.includes(event),
-  );
+  const modules: HandlerModule[] = HandlerModules;
   const extension = {
     octokit: context.octokit,
   };

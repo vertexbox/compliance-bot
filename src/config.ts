@@ -6,7 +6,7 @@ export interface Configuration {
   app_name: string;
 }
 
-export const Handlers: HandlerModule[] = [
+export const HandlerModules: HandlerModule[] = [
   ValidatePRTileHandler,
   CheckPRTestedLabel,
 ];
