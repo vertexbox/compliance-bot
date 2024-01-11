@@ -63,7 +63,7 @@ Processing
       metadata.pull_request.labels
         .map((label: any) => label.name)
         .includes("tested") &&
-      metadata.pull_request.labels.some((label: string) =>
+      !metadata.pull_request.labels.some((label: string) =>
         checkerExemptionLabels.includes(label),
       )
     ) {
