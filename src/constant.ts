@@ -17,4 +17,11 @@ export const defaultLables = [
   "api",
 ];
 
+export const checkerExemptionLabels = [
+  "style",
+  "fixture",
+  "chore",
+  "documentation",
+];
+
 export const strictLabels = defaultLables.slice(0, -5);

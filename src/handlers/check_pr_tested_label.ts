@@ -7,6 +7,7 @@ import {
   Result,
 } from "../common";
 import { constructMetadata } from "../events/metadata";
+import { checkerExemptionLabels } from "../constant";
 
 const check_run_name = `${process.env.APP_NAME} / check_pr_tested_label`;
 
@@ -61,7 +62,10 @@ Processing
     if (
       metadata.pull_request.labels
         .map((label: any) => label.name)
-        .includes("tested")
+        .includes("tested") &&
+      metadata.pull_request.labels.some((label: string) =>
+        checkerExemptionLabels.includes(label),
+      )
     ) {
       // valid format
       app.log.info(`Check passed, label 'tested' is present, proceed`);
