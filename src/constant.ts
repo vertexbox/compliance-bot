@@ -24,4 +24,6 @@ export const checkerExemptionLabels = [
   "documentation",
 ];
 
+export const documentationAllowedFileExts = ["md"];
+
 export const strictLabels = defaultLables.slice(0, -5);
