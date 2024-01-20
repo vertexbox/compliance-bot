@@ -58,38 +58,53 @@ Processing
     const _check_run_id = response.data.id;
     app.log.info(`check_run ${_check_run_id} created`);
 
-    // 1.2 Check if the tested label is present in the PR
+    // 1.2.1 Check if the labels associated with the PR are in the exemption list
     if (
-      metadata.pull_request.labels
-        .map((label: any) => label.name)
-        .includes("tested") &&
-      !metadata.pull_request.labels.some((label: string) =>
-        checkerExemptionLabels.includes(label),
+      metadata.pull_request.labels.some((label: any) =>
+        checkerExemptionLabels.includes(label.name),
       )
     ) {
-      // valid format
-      app.log.info(`Check passed, label 'tested' is present, proceed`);
-
-      // Update status
+      // condition not applicable
+      const msg = "Condition not applicable, skipped";
+      app.log.info(`${msg}`);
       _status = "completed";
-      _conclusion = "success";
+      _conclusion = "skipped";
       _summary = `
+### Summary
+
+${msg}
+    `;
+    } else {
+      // 1.2.2 Check if the tested label is present in the PR
+      if (
+        metadata.pull_request.labels
+          .map((label: any) => label.name)
+          .includes("tested")
+      ) {
+        // valid format
+        app.log.info(`Check passed, label 'tested' is present, proceed`);
+
+        // Update status
+        _status = "completed";
+        _conclusion = "success";
+        _summary = `
 ### Summary
 
 Passed
     `;
-    } else {
-      // invalid format
-      app.log.info(`Check failed, label 'tested' is not present, rejected`);
+      } else {
+        // invalid format
+        app.log.info(`Check failed, label 'tested' is not present, rejected`);
 
-      // Update status
-      _status = "completed";
-      _conclusion = "failure";
-      _summary = `
+        // Update status
+        _status = "completed";
+        _conclusion = "failure";
+        _summary = `
 ### Summary
 
 The 'tested' label is not present in the PR, please perform some functional/unit tests before merging it.
     `;
+      }
     }
 
     // 1.3 Update check_run with summary and mark as completed
