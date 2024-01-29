@@ -22,6 +22,8 @@ export const checkerExemptionLabels = [
   "fixture",
   "chore",
   "documentation",
+  "automated-pr",
+  "release:auto",
 ];
 
 export const documentationAllowedFileExts = ["md"];
