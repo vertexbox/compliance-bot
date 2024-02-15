@@ -1,10 +1,10 @@
 {
-  "name": "dae-governor",
+  "name": "compliance-bot",
   "private": true,
   "version": "0.1.0",
-  "description": "daeuniverse compliance bot",
-  "homepage": "https://github.com/daeuniverse/compliance-bot",
-  "author": "daeuniverse",
+  "description": "compliance bot",
+  "homepage": "https://github.com/vertexbox/compliance-bot",
+  "author": "kev",
   "contributors": [
     "yqlbu"
   ],
