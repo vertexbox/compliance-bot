@@ -19,7 +19,7 @@
     "start": "probot run ./lib/index.js",
     "debug": "tsc && npx probot run ./lib/index.js",
     "test": "jest",
-    "update-deps": "npx npm-check-updates -u && npm i"
+    "update-deps": "npx npm-check-updates -u && yarn install"
   },
   "dependencies": {
     "@types/uuid": "^9.0.7",
