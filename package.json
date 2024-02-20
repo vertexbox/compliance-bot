@@ -26,6 +26,7 @@
     "@vercel/kv": "^1.0.1",
     "dotenv": "^16.3.1",
     "iso8601-duration": "^2.1.2",
+    "pino": "^8.19.0",
     "prettier": "^3.1.1",
     "probot": "^12.3.3",
     "uuid": "^9.0.1"
